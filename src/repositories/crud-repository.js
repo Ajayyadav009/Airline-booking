@@ -5,14 +5,10 @@ class CrudRepository {
     this.model = model;
   }
 async create(data) {
-  try {
+ 
     if (data.capacity) data.capacity = Number(data.capacity); // convert string to number
     const response = await this.model.create(data);
-    return response;
-  } catch (error) {
-    Logger.error("Something went wrong in the Crud repo: create", error);
-    throw error;
-  }
+
 }
 
 
